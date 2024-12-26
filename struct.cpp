@@ -1,24 +1,44 @@
 #include <iostream>
 #include <conio.h>
+#include <string> 
+#include <limits>
 using namespace std;
 
+struct mahasiswa {
+string nim;
+string nama;
+string alamat;
+float ipk;
+};
 
 void dMenu(){
 system("cls");
-cout<<"Aplikasi Tampilan Menu"<<"\n";       
-cout<<"1. Menu Pertama"<<"\n";            
-cout<<"2. Menu Kedua"<<"\n";            
-cout<<"3. Menu Ketiga"<<"\n";           
-cout<<"4. Menu Keempat"<<"\n";            
+cout<<"Aplikasi Kelas SIKC"<<"\n";       
+cout<<"1. Masukkan data"<<"\n";            
+cout<<"2. Tampilkan data"<<"\n";            
+cout<<"3. Perbaikan data"<<"\n";           
+cout<<"4. Menghapus data"<<"\n";            
 cout<<"5. Exit"<<"\n";           
-cout<<"Masukan angka :";        
-
+cout<<"Masukan angka :";    
 }
 
-void mPertama(string pesan){
+mahasiswa sikc[30];
+
+int pos=-1;
+
+void masukanData(){
+pos++;
 system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
+fflush(stdin);
+cout << "masukan nim: ";
+getline (cin, sikc[pos].nim);
+cout << "masukan nama: ";
+getline (cin, sikc[pos].nama);
+cout << "masukan alamat: ";
+getline (cin, sikc[pos].alamat);
+cout << "masukan ipk: ";
+cin >> sikc[pos].ipk;
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 
@@ -32,18 +52,18 @@ do
   {
    case '1':
     /* code */
-    mPertama("pertama");
+   masukanData();
     break;
    case '2':
-    mPertama("ke- dua");
+    
     /* code */ 
     break;  
    case '3':
-    mPertama("ke- tiga");
+   
     /* code */
     break;  
    case '4':
-    mPertama("ke- empat");
+   
     /* code */
     break;  
   case '5':
