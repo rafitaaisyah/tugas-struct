@@ -47,6 +47,19 @@ sikc[p].ipk<<endl;
 getch();
 }
 
+void perbaikanData(int p)
+{
+system("cls");
+fflush(stdin);
+cout << "masukan nama: ";
+getline (cin, sikc[p].nama);
+cout << "masukan alamat: ";
+getline (cin, sikc[p].alamat);
+cout << "masukan ipk: ";
+cin >> sikc[p].ipk;
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
 int main() {
 char pl;
 do
@@ -64,7 +77,14 @@ do
     /* code */ 
     break;  
    case '3':
-   
+    int ubahdt;
+    cout << "\nMasukkan nomor mahasiswa yang ingin diperbaiki: ";
+    cin >> ubahdt;
+    cin.ignore();
+    if (ubahdt >= 1 && ubahdt <= pos + 1) {
+        perbaikanData(ubahdt - 1);  
+    }
+
     /* code */
     break;  
    case '4':
