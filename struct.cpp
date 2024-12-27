@@ -60,6 +60,16 @@ cin >> sikc[p].ipk;
 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+void hapusDataM(int p) {
+    if (p >= 0 && p <= pos) {
+        for (int i = p; i < pos; i++) {
+            sikc[i] = sikc[i + 1];
+        }
+        pos--;
+    }
+}
+
+
 int main() {
 char pl;
 do
@@ -84,11 +94,20 @@ do
     if (ubahdt >= 1 && ubahdt <= pos + 1) {
         perbaikanData(ubahdt - 1);  
     }
-
     /* code */
     break;  
    case '4':
-   
+    {
+    system("cls");
+    int index;
+    cout << "Masukkan nomor mahasiswa yang ingin dihapus: ";
+    cin >> index;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    hapusDataM(index);
+    getch();
+    break; 
+    }
+
     /* code */
     break;  
   case '5':
